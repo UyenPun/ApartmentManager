@@ -1,0 +1,1336 @@
+2024-08-13 15:49:05 [background-preinit] INFO  o.h.v.i.u.Version                                  - HV000001: Hibernate Validator 8.0.1.Final 
+2024-08-13 15:49:05 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 15:49:05 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 15:49:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-08-13 15:49:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-08-13 15:49:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 15:49:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 44 ms. Found 7 JPA repository interfaces. 
+2024-08-13 15:49:06 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 15:49:06 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:49:06 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 15:49:06 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 15:49:06 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 15:49:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 1133 ms 
+2024-08-13 15:49:06 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2024-08-13 15:49:06 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31e77d89 
+2024-08-13 15:49:06 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2024-08-13 15:49:06 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 15:49:06 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 6.2.9.Final 
+2024-08-13 15:49:06 [restartedMain] INFO  o.h.c.Environment                                  - HHH000406: Using bytecode reflection optimizer 
+2024-08-13 15:49:07 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:49:07 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 15:49:07 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:49:07 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 15:49:07 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:49:08 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory                   - Hibernate is in classpath; If applicable, HQL parser will be used. 
+2024-08-13 15:49:08 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 15:49:09 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 15:49:09 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:49:09 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 15:49:09 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 4.182 seconds (process running for 5.068) 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:49:09 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:50:26 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-08-13 15:50:26 [http-nio-8080-exec-3] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet' 
+2024-08-13 15:50:26 [http-nio-8080-exec-3] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 0 ms 
+2024-08-13 15:50:26 [http-nio-8080-exec-3] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:50:26 [http-nio-8080-exec-3] DEBUG o.h.SQL                                            - 
+    insert 
+    into
+        utilities
+        (apartment_id,electricity_usage,payment_date,payment_status,total_amount,water_usage) 
+    values
+        (?,?,?,?,?,?) 
+2024-08-13 15:52:07 [http-nio-8080-exec-7] DEBUG o.h.SQL                                            - 
+    select
+        u1_0.id,
+        u1_0.apartment_id,
+        u1_0.electricity_usage,
+        u1_0.payment_date,
+        u1_0.payment_status,
+        u1_0.total_amount,
+        u1_0.water_usage 
+    from
+        utilities u1_0 
+    where
+        u1_0.apartment_id=? 
+2024-08-13 15:52:07 [http-nio-8080-exec-7] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:17 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-08-13 15:54:17 [Thread-6] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:17 [Thread-6] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 15:54:17 [Thread-6] INFO  o.a.c.c.C.[.[.[/]                                  - Destroying Spring FrameworkServlet 'dispatcherServlet' 
+2024-08-13 15:54:17 [Thread-6] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:17 [Thread-6] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:17 [Thread-6] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:17 [Thread-6] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2024-08-13 15:54:17 [Thread-6] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2024-08-13 15:54:17 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 15:54:17 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 15:54:17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 15:54:17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 11 ms. Found 7 JPA repository interfaces. 
+2024-08-13 15:54:17 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 15:54:17 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:17 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 15:54:17 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 15:54:17 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 15:54:17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 248 ms 
+2024-08-13 15:54:17 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Starting... 
+2024-08-13 15:54:17 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5abae7e3 
+2024-08-13 15:54:17 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Start completed. 
+2024-08-13 15:54:17 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 15:54:17 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:17 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 15:54:17 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:17 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 15:54:17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:18 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'utilityController' defined in file [C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes\com\company\controller\UtilityController.class]: Failed to instantiate [com.company.controller.UtilityController]: Constructor threw exception 
+2024-08-13 15:54:18 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:18 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown initiated... 
+2024-08-13 15:54:18 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown completed. 
+2024-08-13 15:54:18 [restartedMain] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 15:54:18 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger          - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-08-13 15:54:18 [restartedMain] ERROR o.s.b.SpringApplication                            - Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'utilityController' defined in file [C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes\com\company\controller\UtilityController.class]: Failed to instantiate [com.company.controller.UtilityController]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1314) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1199) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.12.jar:6.0.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.12.jar:6.0.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) [spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) [spring-boot-3.1.4.jar:3.1.4]
+	at com.company.ApartmentManagementApplication.main(ApartmentManagementApplication.java:10) [classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.4.jar:3.1.4]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.company.controller.UtilityController]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-6.0.12.jar:6.0.12]
+	... 20 more
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Type mismatch: cannot convert from void to boolean
+	Syntax error, insert "}" to complete ClassBody
+
+	at com.company.controller.UtilityController.<init>(UtilityController.java:57) ~[classes/:?]
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-6.0.12.jar:6.0.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-6.0.12.jar:6.0.12]
+	... 20 more
+2024-08-13 15:54:19 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 15:54:19 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 15:54:19 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 15:54:19 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 13 ms. Found 7 JPA repository interfaces. 
+2024-08-13 15:54:19 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 15:54:19 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:19 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 15:54:19 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 15:54:19 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 15:54:19 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 220 ms 
+2024-08-13 15:54:19 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Starting... 
+2024-08-13 15:54:19 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f18d48d 
+2024-08-13 15:54:19 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Start completed. 
+2024-08-13 15:54:19 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 15:54:19 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:19 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 15:54:19 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:19 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 15:54:19 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:20 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 15:54:20 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 15:54:20 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:20 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 15:54:20 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 0.811 seconds (process running for 316.143) 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:20 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2024-08-13 15:54:24 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-08-13 15:54:24 [Thread-8] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:24 [Thread-8] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 15:54:24 [Thread-8] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:24 [Thread-8] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:24 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:24 [Thread-8] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Shutdown initiated... 
+2024-08-13 15:54:24 [Thread-8] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Shutdown completed. 
+2024-08-13 15:54:24 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 15:54:24 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 12 ms. Found 7 JPA repository interfaces. 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 15:54:25 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:25 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 15:54:25 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 15:54:25 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 209 ms 
+2024-08-13 15:54:25 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Starting... 
+2024-08-13 15:54:25 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@605b3e3f 
+2024-08-13 15:54:25 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Start completed. 
+2024-08-13 15:54:25 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 15:54:25 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 15:54:25 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:25 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:25 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 15:54:25 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 15:54:25 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 0.814 seconds (process running for 321.467) 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:25 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2024-08-13 15:54:38 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications) 
+2024-08-13 15:54:38 [Thread-17] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:38 [Thread-17] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 15:54:38 [Thread-17] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:38 [Thread-17] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:38 [Thread-17] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:38 [Thread-17] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Shutdown initiated... 
+2024-08-13 15:54:38 [Thread-17] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Shutdown completed. 
+2024-08-13 15:54:38 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 15:54:38 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 15:54:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 15:54:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 12 ms. Found 7 JPA repository interfaces. 
+2024-08-13 15:54:38 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 15:54:38 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:38 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 15:54:38 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 15:54:38 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 15:54:38 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 201 ms 
+2024-08-13 15:54:38 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-5 - Starting... 
+2024-08-13 15:54:38 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c28f6c2 
+2024-08-13 15:54:38 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-5 - Start completed. 
+2024-08-13 15:54:38 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 15:54:38 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:38 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 15:54:38 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:54:38 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 15:54:38 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:54:38 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 15:54:39 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 15:54:39 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:54:39 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 15:54:39 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 0.734 seconds (process running for 334.887) 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:54:39 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2024-08-13 15:56:14 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-08-13 15:56:14 [Thread-22] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:56:14 [Thread-22] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 15:56:14 [Thread-22] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:56:14 [Thread-22] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:56:14 [Thread-22] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:56:14 [Thread-22] INFO  c.z.h.HikariDataSource                             - HikariPool-5 - Shutdown initiated... 
+2024-08-13 15:56:14 [Thread-22] INFO  c.z.h.HikariDataSource                             - HikariPool-5 - Shutdown completed. 
+2024-08-13 15:56:14 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 15:56:14 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 15:56:14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 15:56:14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 11 ms. Found 7 JPA repository interfaces. 
+2024-08-13 15:56:14 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 15:56:14 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:56:14 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 15:56:14 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 15:56:14 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 15:56:14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 192 ms 
+2024-08-13 15:56:14 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-6 - Starting... 
+2024-08-13 15:56:14 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e2e750e 
+2024-08-13 15:56:14 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-6 - Start completed. 
+2024-08-13 15:56:14 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 15:56:14 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:56:14 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 15:56:14 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 15:56:14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 15:56:14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 15:56:14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 15:56:15 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 15:56:15 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 15:56:15 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 15:56:15 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 0.757 seconds (process running for 430.946) 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 15:56:15 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2024-08-13 16:04:23 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-08-13 16:04:23 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet' 
+2024-08-13 16:04:23 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 0 ms 
+2024-08-13 16:04:23 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:04:23 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    insert 
+    into
+        utilities
+        (apartment_id,electricity_usage,payment_date,payment_status,total_amount,water_usage) 
+    values
+        (?,?,?,?,?,?) 
+2024-08-13 16:07:01 [http-nio-8080-exec-5] DEBUG o.h.SQL                                            - 
+    select
+        u1_0.id,
+        u1_0.apartment_id,
+        u1_0.electricity_usage,
+        u1_0.payment_date,
+        u1_0.payment_status,
+        u1_0.total_amount,
+        u1_0.water_usage 
+    from
+        utilities u1_0 
+    where
+        u1_0.apartment_id=? 
+2024-08-13 16:07:01 [http-nio-8080-exec-5] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:01 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-08-13 16:11:01 [Thread-27] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:01 [Thread-27] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 16:11:01 [Thread-27] INFO  o.a.c.c.C.[.[.[/]                                  - Destroying Spring FrameworkServlet 'dispatcherServlet' 
+2024-08-13 16:11:01 [Thread-27] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:01 [Thread-27] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:01 [Thread-27] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 16:11:01 [Thread-27] INFO  c.z.h.HikariDataSource                             - HikariPool-6 - Shutdown initiated... 
+2024-08-13 16:11:01 [Thread-27] INFO  c.z.h.HikariDataSource                             - HikariPool-6 - Shutdown completed. 
+2024-08-13 16:11:01 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 16:11:01 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 16:11:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 16:11:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 11 ms. Found 7 JPA repository interfaces. 
+2024-08-13 16:11:01 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 16:11:01 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:01 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 16:11:01 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 16:11:01 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 16:11:01 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 214 ms 
+2024-08-13 16:11:01 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-7 - Starting... 
+2024-08-13 16:11:01 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@687d5d29 
+2024-08-13 16:11:01 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-7 - Start completed. 
+2024-08-13 16:11:01 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 16:11:01 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 16:11:01 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 16:11:01 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 16:11:01 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 16:11:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 16:11:01 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 16:11:02 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 16:11:02 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:02 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 16:11:02 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 0.848 seconds (process running for 1318.068) 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:02 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2024-08-13 16:11:06 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-08-13 16:11:06 [Thread-32] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:06 [Thread-32] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 16:11:06 [Thread-32] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:06 [Thread-32] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:06 [Thread-32] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 16:11:06 [Thread-32] INFO  c.z.h.HikariDataSource                             - HikariPool-7 - Shutdown initiated... 
+2024-08-13 16:11:06 [Thread-32] INFO  c.z.h.HikariDataSource                             - HikariPool-7 - Shutdown completed. 
+2024-08-13 16:11:06 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 16:11:06 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 12 ms. Found 7 JPA repository interfaces. 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 16:11:07 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:07 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 16:11:07 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 16:11:07 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 211 ms 
+2024-08-13 16:11:07 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-8 - Starting... 
+2024-08-13 16:11:07 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e9f6bd8 
+2024-08-13 16:11:07 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-8 - Start completed. 
+2024-08-13 16:11:07 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 16:11:07 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 16:11:07 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 16:11:07 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 16:11:07 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 16:11:07 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 16:11:07 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 0.761 seconds (process running for 1323.412) 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:07 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2024-08-13 16:11:15 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-08-13 16:11:15 [Thread-37] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:15 [Thread-37] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 16:11:15 [Thread-37] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:15 [Thread-37] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:15 [Thread-37] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 16:11:15 [Thread-37] INFO  c.z.h.HikariDataSource                             - HikariPool-8 - Shutdown initiated... 
+2024-08-13 16:11:15 [Thread-37] INFO  c.z.h.HikariDataSource                             - HikariPool-8 - Shutdown completed. 
+2024-08-13 16:11:15 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3024 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager) 
+2024-08-13 16:11:15 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev" 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 10 ms. Found 7 JPA repository interfaces. 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2024-08-13 16:11:15 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:15 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2024-08-13 16:11:15 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13] 
+2024-08-13 16:11:15 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 174 ms 
+2024-08-13 16:11:15 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-9 - Starting... 
+2024-08-13 16:11:15 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50b8b705 
+2024-08-13 16:11:15 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-9 - Start completed. 
+2024-08-13 16:11:15 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-08-13 16:11:15 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-08-13 16:11:15 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy 
+2024-08-13 16:11:15 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 16:11:15 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2024-08-13 16:11:15 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2024-08-13 16:11:15 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 0.678 seconds (process running for 1331.738) 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        r1_0.id,
+        r1_0.apartment_id,
+        r1_0.birth_year,
+        r1_0.email,
+        r1_0.gender,
+        r1_0.id_card,
+        r1_0.moved_in_date,
+        r1_0.moved_out_date,
+        r1_0.name,
+        r1_0.phone 
+    from
+        residents r1_0 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] DEBUG o.h.SQL                                            - 
+    select
+        a1_0.id,
+        a1_0.apartment_number,
+        a1_0.area,
+        a1_0.num_rooms 
+    from
+        `apartments` a1_0 
+    where
+        a1_0.id=? 
+2024-08-13 16:11:15 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat] 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"] 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  c.z.h.HikariDataSource                             - HikariPool-9 - Shutdown initiated... 
+2024-08-13 16:13:17 [RMI TCP Connection(26)-127.0.0.1] INFO  c.z.h.HikariDataSource                             - HikariPool-9 - Shutdown completed. 
