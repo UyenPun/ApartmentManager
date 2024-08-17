@@ -42,6 +42,14 @@ public class MonthlyFee implements Serializable {
 	@NonNull
 	private Resident resident;
 
+	@ManyToOne
+	@JoinColumn(name = "created_by")
+	private User createdBy;
+
+	@ManyToOne
+	@JoinColumn(name = "updated_by")
+	private User updatedBy;
+
 	@Column(name = "fee_month", nullable = false)
 	@NonNull
 	private LocalDate feeMonth;

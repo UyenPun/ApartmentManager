@@ -49,4 +49,12 @@ public class AdditionalCharge implements Serializable {
 	@Column(name = "charge_date", nullable = false)
 	@NonNull
 	private LocalDate chargeDate;
+
+	@ManyToOne
+	@JoinColumn(name = "created_by", nullable = false)
+	private User createdBy;
+
+	@ManyToOne
+	@JoinColumn(name = "updated_by", nullable = false)
+	private User updatedBy;
 }
