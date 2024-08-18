@@ -1,6 +1,7 @@
 package com.company.service;
 
 import java.util.Date;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,14 +11,19 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Service;
 
 import com.company.entity.User;
+import com.company.repository.ITokenRepository;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.transaction.Transactional;
+
+import com.company.dto.TokenDTO;
+import com.company.entity.Token;
+import com.company.entity.Token.Type;
 
 @Service
 public class JWTTokenService implements IJWTTokenService {
-
 	@Value("${jwt.token.time.expiration}")
 	private long EXPIRATION_TIME;
 
@@ -30,8 +36,14 @@ public class JWTTokenService implements IJWTTokenService {
 	@Value("${jwt.token.prefix}") // key
 	private String TOKEN_PREFIX;
 
+	@Value("${jwt.refreshtoken.time.expiration}")
+	private long REFRESH_EXPIRATION_TIME;
+
 	@Autowired
 	private IUserService userService;
+
+	@Autowired
+	private ITokenRepository tokenRepository;
 
 	@Override
 	public String generateJWTToken(String username) {
@@ -63,5 +75,45 @@ public class JWTTokenService implements IJWTTokenService {
 		} catch (Exception e) {
 			return null;
 		}
+	}
+
+	@Override
+	@Transactional
+	public Token generateRefreshToken(User user) {
+		Token refreshToken = new Token(user, UUID.randomUUID().toString(), Token.Type.REFRESH_TOKEN,
+				new Date(new Date().getTime() + REFRESH_EXPIRATION_TIME));
+
+		// delete all old refresh token of this account
+		tokenRepository.deleteByUser(user);
+
+		// create new token
+		return tokenRepository.save(refreshToken);
+	}
+
+	@Override
+	public boolean isRefreshTokenValid(String refreshToken) {
+		Token entity = tokenRepository.findBykeyAndType(refreshToken, Type.REFRESH_TOKEN);
+		if (entity == null || entity.getExpiredDate().before(new Date())) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	@Transactional
+	public TokenDTO getNewToken(String refreshToken) {
+		// find old refresh token
+		Token oldRefreshToken = tokenRepository.findBykeyAndType(refreshToken, Type.REFRESH_TOKEN);
+
+		// delete old refresh token
+		tokenRepository.deleteByUser(oldRefreshToken.getUser());
+
+		// create new refresh token
+		Token newRefreshToken = generateRefreshToken(oldRefreshToken.getUser());
+
+		// create new jwt token
+		String newToken = generateJWTToken(oldRefreshToken.getUser().getUsername());
+
+		return new TokenDTO(newToken, newRefreshToken.getKey());
 	}
 }

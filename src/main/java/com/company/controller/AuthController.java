@@ -1,22 +1,23 @@
 package com.company.controller;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.dto.LoginInfoDto;
-import com.company.entity.User;
+import com.company.dto.TokenDTO;
 import com.company.form.LoginForm;
-import com.company.service.IUserService;
+import com.company.service.IAuthService;
 import com.company.service.IJWTTokenService;
+import com.company.validation.auth.RefreshTokenValid;
 
 import jakarta.validation.Valid;
 
@@ -26,39 +27,29 @@ import jakarta.validation.Valid;
 public class AuthController {
 
 	@Autowired
-	private ModelMapper modelMapper;
-
-	@Autowired
-	private AuthenticationManager authenticationManager;
-
+	private IAuthService authService;
+	
 	@Autowired
 	private IJWTTokenService jwtTokenService;
 
 	@Autowired
-	private IUserService service;
+	private AuthenticationManager authenticationManager;
 
 	@PostMapping("/login")
 	public LoginInfoDto login(@RequestBody @Valid LoginForm loginForm) {
 
-		// Người dùng truyền xuống
 		Authentication authentication = authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(loginForm.getUsername(), loginForm.getPassword())); // truyền
-																											// vào ->
-																											// //Check
-																											// dưới
-																											// database
+				new UsernamePasswordAuthenticationToken(
+						loginForm.getUsername(), 
+						loginForm.getPassword()));
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
-		// get entity
-		User entity = service.getUserByUsername(loginForm.getUsername());
-
-		// convert entity to dto
-		LoginInfoDto dto = modelMapper.map(entity, LoginInfoDto.class);
-
-		// add jwt token to dto
-		dto.setToken(jwtTokenService.generateJWTToken(entity.getUsername()));
-
-		return dto;
+		return authService.login(loginForm.getUsername());
+	}
+	
+	@GetMapping("/refreshtoken")
+	public TokenDTO refreshtoken(@RefreshTokenValid String refreshToken) {
+		return jwtTokenService.getNewToken(refreshToken);
 	}
 }
