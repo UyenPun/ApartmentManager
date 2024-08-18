@@ -6,4 +6,7 @@ import com.company.entity.User;
 
 public interface IUserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User> {
     User findByUsername(String username); // tìm kiếm người dùng theo tên đăng nhập
+    
+	boolean existsByUsername(String username);
+
 }

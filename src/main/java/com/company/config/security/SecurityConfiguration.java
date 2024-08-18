@@ -15,6 +15,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -28,6 +29,9 @@ public class SecurityConfiguration {
 	@Autowired
 	private AuthExceptionHandler authExceptionHandler;
 
+	@Autowired
+	private JWTAuthorizationFilter jwtAuthorizationFilter;
+
 	@Bean
 	public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
 		return authConfig.getAuthenticationManager();
@@ -36,13 +40,12 @@ public class SecurityConfiguration {
 	@SuppressWarnings("removal")
 	@Bean
 	public SecurityFilterChain configureSecurity(HttpSecurity http) throws Exception {
-		http.cors(withDefaults()).csrf((csrf) -> csrf.disable()).authorizeHttpRequests((requests) -> requests
-				// Đường dẫn cho login: không yêu cầu xác thực (anonymous)
-				.requestMatchers(HttpMethod.POST, "/api/v1/auth/login").anonymous()
-				// Đường dẫn cho quản lý người dùng: chỉ dành cho ADMIN và MANAGER
-				.requestMatchers(HttpMethod.POST, "/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER")
-				// Các yêu cầu còn lại đều yêu cầu xác thực
-				.anyRequest().authenticated()).httpBasic(withDefaults()).exceptionHandling()
+		http.cors(withDefaults()).csrf((csrf) -> csrf.disable())
+				.authorizeHttpRequests((requests) -> requests.requestMatchers(HttpMethod.POST, "/api/v1/auth/login")
+						.anonymous().requestMatchers("/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER")
+						.anyRequest().authenticated())
+				.httpBasic(withDefaults())
+				.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class).exceptionHandling()
 				.authenticationEntryPoint(authExceptionHandler).accessDeniedHandler(authExceptionHandler);
 
 		return http.build();
