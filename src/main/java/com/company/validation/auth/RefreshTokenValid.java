@@ -1,5 +1,6 @@
 package com.company.validation.auth;
 
+// Validation annotation
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.CONSTRUCTOR;
 import static java.lang.annotation.ElementType.FIELD;
@@ -23,7 +24,7 @@ import jakarta.validation.Payload;
 @Documented
 @Constraint(validatedBy = { RefreshTokenValidValidator.class })
 @Repeatable(List.class)
-public @interface RefreshTokenValid {
+public @interface RefreshTokenValid { // Tạo annonation để check xem fresher token user nhập vào hợp lệ không
 	String message() default "RefreshToken is not valid!";
 
 	Class<?>[] groups() default {};

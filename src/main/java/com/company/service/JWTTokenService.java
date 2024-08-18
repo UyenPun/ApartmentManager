@@ -90,6 +90,7 @@ public class JWTTokenService implements IJWTTokenService {
 		return tokenRepository.save(refreshToken);
 	}
 
+//	Check refresh token xem có đúng đã cấp và còn hạn không
 	@Override
 	public boolean isRefreshTokenValid(String refreshToken) {
 		Token entity = tokenRepository.findBykeyAndType(refreshToken, Type.REFRESH_TOKEN);
@@ -103,13 +104,13 @@ public class JWTTokenService implements IJWTTokenService {
 	@Transactional
 	public TokenDTO getNewToken(String refreshToken) {
 		// find old refresh token
-		Token oldRefreshToken = tokenRepository.findBykeyAndType(refreshToken, Type.REFRESH_TOKEN);
+		Token oldRefreshToken = tokenRepository.findBykeyAndType(refreshToken, Type.REFRESH_TOKEN); // get thông tin token cũ
 
 		// delete old refresh token
-		tokenRepository.deleteByUser(oldRefreshToken.getUser());
+		tokenRepository.deleteByUser(oldRefreshToken.getUser()); // delete token cũ đi (chỉ lưu refresh token mới ở database)
 
 		// create new refresh token
-		Token newRefreshToken = generateRefreshToken(oldRefreshToken.getUser());
+		Token newRefreshToken = generateRefreshToken(oldRefreshToken.getUser()); // create token & refresh token
 
 		// create new jwt token
 		String newToken = generateJWTToken(oldRefreshToken.getUser().getUsername());

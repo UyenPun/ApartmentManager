@@ -8,6 +8,7 @@ import com.company.service.IJWTTokenService;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+// Validation annotation
 public class RefreshTokenValidValidator implements ConstraintValidator<RefreshTokenValid, String> {
 
 	@Autowired

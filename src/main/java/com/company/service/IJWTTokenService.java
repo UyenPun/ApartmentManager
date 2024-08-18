@@ -13,8 +13,7 @@ public interface IJWTTokenService {
 
 	String generateJWTToken(String username);
 
-	Authentication parseTokenToUserInformation(HttpServletRequest request); // đầu vào 1 token -> đầu ra user, pass của
-																			// thằng đấy
+	Authentication parseTokenToUserInformation(HttpServletRequest request); // đầu vào 1 token -> đầu ra user, pass của thằng đấy
 
 	Token generateRefreshToken(User user);
 

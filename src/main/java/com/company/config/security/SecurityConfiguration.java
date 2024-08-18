@@ -41,9 +41,9 @@ public class SecurityConfiguration {
 	@Bean
 	public SecurityFilterChain configureSecurity(HttpSecurity http) throws Exception {
 		http.cors(withDefaults()).csrf((csrf) -> csrf.disable())
-				.authorizeHttpRequests((requests) -> requests.requestMatchers(HttpMethod.POST, "/api/v1/auth/login")
-						.anonymous().requestMatchers("/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER")
-						.anyRequest().authenticated())
+				.authorizeHttpRequests((requests) -> requests.requestMatchers("/api/v1/auth/**").anonymous() // cho phép các API trong auth đều có thể truy cập mà không cần login
+						.requestMatchers("/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER").anyRequest()
+						.authenticated())
 				.httpBasic(withDefaults())
 				.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class).exceptionHandling()
 				.authenticationEntryPoint(authExceptionHandler).accessDeniedHandler(authExceptionHandler);
