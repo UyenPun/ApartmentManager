@@ -25,8 +25,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
+import lombok.extern.log4j.Log4j2;
 
 @ControllerAdvice
+@Log4j2
 public class ExceptionConfiguration extends ResponseEntityExceptionHandler {
 
 	// Default exception
@@ -36,80 +38,65 @@ public class ExceptionConfiguration extends ResponseEntityExceptionHandler {
 		String detailMessage = exception.getLocalizedMessage();
 		int code = 1;
 
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage, 
-				code, 
-				exception);
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, exception);
 
+		log.error(detailMessage, exception);
 		return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	
+
 	// Not found url handler
 	@Override
-	protected ResponseEntity<Object> handleNoHandlerFoundException(
-			NoHandlerFoundException exception,
+	protected ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException exception,
 			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
 		String message = "No handler found for " + exception.getHttpMethod() + " " + exception.getRequestURL();
 		String detailMessage = exception.getLocalizedMessage();
 		int code = 2;
-			
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage, 
-				code, 
-				exception);
-			
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, exception);
+
 		return new ResponseEntity<>(response, status);
 	}
 
 	// Not support HTTP Method
 	@Override
 	protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(
-			HttpRequestMethodNotSupportedException exception, 
-			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+			HttpRequestMethodNotSupportedException exception, HttpHeaders headers, HttpStatusCode status,
+			WebRequest request) {
 		String message = getMessageFromHttpRequestMethodNotSupportedException(exception);
 		String detailMessage = exception.getLocalizedMessage();
 		int code = 3;
-		
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage, 
-				code, 
-				exception);
-		
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, exception);
+
+		log.error(detailMessage, exception);
 		return new ResponseEntity<>(response, status);
 	}
-	
+
 	private String getMessageFromHttpRequestMethodNotSupportedException(
 			HttpRequestMethodNotSupportedException exception) {
 		String message = exception.getMethod() + " method is not supported for this request. Supported methods are";
 		for (HttpMethod method : exception.getSupportedHttpMethods()) {
-			message += " " + method ;
+			message += " " + method;
 		}
+
 		return message;
 	}
 
 	// Not support media type
 	@Override
-	protected ResponseEntity<Object> handleHttpMediaTypeNotSupported(
-			HttpMediaTypeNotSupportedException exception,
+	protected ResponseEntity<Object> handleHttpMediaTypeNotSupported(HttpMediaTypeNotSupportedException exception,
 			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
 		String message = getMessageFromHttpMediaTypeNotSupportedException(exception);
 		String detailMessage = exception.getLocalizedMessage();
 		int code = 4;
-		
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage, 
-				code, 
-				exception);
-		
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, exception);
+
+		log.error(detailMessage, exception);
 		return new ResponseEntity<>(response, status);
 	}
 
-	private String getMessageFromHttpMediaTypeNotSupportedException(
-			HttpMediaTypeNotSupportedException exception) {
+	private String getMessageFromHttpMediaTypeNotSupportedException(HttpMediaTypeNotSupportedException exception) {
 		String message = exception.getContentType() + " media type is not supported. Supported media types are ";
 		for (MediaType method : exception.getSupportedMediaTypes()) {
 			message += method + ", ";
@@ -120,43 +107,33 @@ public class ExceptionConfiguration extends ResponseEntityExceptionHandler {
 	// missing parameter
 	@Override
 	protected ResponseEntity<Object> handleMissingServletRequestParameter(
-			MissingServletRequestParameterException exception, 
-			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+			MissingServletRequestParameterException exception, HttpHeaders headers, HttpStatusCode status,
+			WebRequest request) {
 		String message = exception.getParameterName() + " parameter is missing";
 		String detailMessage = exception.getLocalizedMessage();
 		int code = 5;
-		
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage, 
-				code, 
-				exception);
-		
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, exception);
+
 		return new ResponseEntity<>(response, status);
 	}
-	
+
 	// wrong parameter type
 	@ExceptionHandler({ MethodArgumentTypeMismatchException.class })
-	public ResponseEntity<Object> handleMethodArgumentTypeMismatch(
-			MethodArgumentTypeMismatchException exception) {
+	public ResponseEntity<Object> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException exception) {
 
 		String message = exception.getName() + " should be of type " + exception.getRequiredType().getName();
 		String detailMessage = exception.getLocalizedMessage();
 		int code = 6;
-		
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage, 
-				code, 
-				new Exception());
-		
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, new Exception());
+
 		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 	}
 
 	// bean validation
 	@Override
-	protected ResponseEntity<Object> handleMethodArgumentNotValid(
-			MethodArgumentNotValidException exception,
+	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException exception,
 			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
 		String message = "Validation: Parameters is error!";
 		String detailMessage = exception.getLocalizedMessage();
@@ -168,21 +145,16 @@ public class ExceptionConfiguration extends ResponseEntityExceptionHandler {
 			errors.put(fieldName, errorMessage);
 		}
 		int code = 7;
-		
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage, 
-				code, 
-				errors);
-		
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, errors);
+
 		return new ResponseEntity<>(response, status);
 	}
-	
+
 	// bean validation
 	@SuppressWarnings("rawtypes")
 	@ExceptionHandler(ConstraintViolationException.class)
-	public ResponseEntity<Object> handleConstraintViolationException(
-			ConstraintViolationException exception) {
+	public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException exception) {
 		String message = "Validation: Parameters is error!";
 		String detailMessage = exception.getLocalizedMessage();
 		// error
@@ -193,30 +165,21 @@ public class ExceptionConfiguration extends ResponseEntityExceptionHandler {
 			errors.put(fieldName, errorMessage);
 		}
 		int code = 8;
-		
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage,  
-				code, 
-				errors);
-		
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, errors);
+
 		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	// 401 unauthorized
 	@ExceptionHandler(BadCredentialsException.class)
-	public ResponseEntity<Object> handleBadCredentialsException(
-			BadCredentialsException exception) {
+	public ResponseEntity<Object> handleBadCredentialsException(BadCredentialsException exception) {
 		String message = "Authentication Failed";
 		String detailMessage = exception.getLocalizedMessage();
 		int code = 9;
-		
-		ErrorResponse response = new ErrorResponse(
-				message, 
-				detailMessage,  
-				code, 
-				exception);
-		
+
+		ErrorResponse response = new ErrorResponse(message, detailMessage, code, exception);
+
 		return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
 	}
 
