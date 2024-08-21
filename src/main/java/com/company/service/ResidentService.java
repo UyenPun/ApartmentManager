@@ -6,12 +6,14 @@ import org.springframework.stereotype.Service;
 import com.company.dto.ResidentDTO;
 import com.company.entity.Apartment;
 import com.company.entity.Resident;
+import com.company.exception.ResourceNotFoundException;
 import com.company.form.ResidentForm;
 import com.company.repository.ApartmentRepository;
 import com.company.repository.ResidentRepository;
 import com.company.validation.ResidentServiceException;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class ResidentService implements IResidentService {
@@ -154,5 +156,21 @@ public class ResidentService implements IResidentService {
 		return new ResidentDTO(resident.getId(), resident.getName(), resident.getEmail(), resident.getPhone(),
 				resident.getIdCard(), resident.getBirthYear(), resident.getGender(), resident.getApartment().getId(),
 				resident.getMovedInDate(), resident.getMovedOutDate());
+	}
+
+	// Hàm xử lý soft delete
+	public Resident softDeleteResident(Integer residentId) {
+		Resident resident = residentRepository.findById(residentId)
+				.orElseThrow(() -> new ResourceNotFoundException("Resident not found"));
+
+		// Đánh dấu cư dân là INACTIVE và cập nhật moved_out_date
+		resident.setStatus(ResidentStatus.INACTIVE);
+		resident.setMovedOutDate(LocalDate.now());
+
+		return residentRepository.save(resident);
+	}
+
+	public List<Resident> getActiveResidents() {
+		return residentRepository.findByStatus(ResidentStatus.ACTIVE);
 	}
 }

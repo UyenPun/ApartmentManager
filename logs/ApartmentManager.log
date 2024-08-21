@@ -1,123 +1,72 @@
-2024-08-20 14:45:05 [background-preinit] INFO  o.h.v.i.u.Version                                  - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-21 09:12:29 [background-preinit] INFO  o.h.v.i.u.Version                                  - HV000001: Hibernate Validator 8.0.1.Final
 					
-2024-08-20 14:45:06 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3160 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager)
+2024-08-21 09:12:29 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 20864 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager)
 					
-2024-08-20 14:45:06 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev"
+2024-08-21 09:12:29 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev"
 					
-2024-08-20 14:45:06 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-21 09:12:29 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 					
-2024-08-20 14:45:06 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-21 09:12:29 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
 					
-2024-08-20 14:45:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-21 09:12:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 					
-2024-08-20 14:45:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 74 ms. Found 10 JPA repository interfaces.
+2024-08-21 09:12:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 106 ms. Found 10 JPA repository interfaces.
 					
-2024-08-20 14:45:07 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http)
+2024-08-21 09:12:32 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http)
 					
-2024-08-20 14:45:07 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:12:32 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:45:07 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat]
+2024-08-21 09:12:32 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat]
 					
-2024-08-20 14:45:07 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2024-08-21 09:12:32 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13]
 					
-2024-08-20 14:45:07 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext
+2024-08-21 09:12:32 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext
 					
-2024-08-20 14:45:07 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 1710 ms
+2024-08-21 09:12:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 2788 ms
 					
-2024-08-20 14:45:07 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting...
+2024-08-21 09:12:32 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting...
 					
-2024-08-20 14:45:08 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41a8d1fd
+2024-08-21 09:12:32 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d84ac20
 					
-2024-08-20 14:45:08 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed.
+2024-08-21 09:12:32 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed.
 					
-2024-08-20 14:45:08 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-21 09:12:32 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default]
 					
-2024-08-20 14:45:08 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 6.2.9.Final
+2024-08-21 09:12:32 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 6.2.9.Final
 					
-2024-08-20 14:45:08 [restartedMain] INFO  o.h.c.Environment                                  - HHH000406: Using bytecode reflection optimizer
+2024-08-21 09:12:32 [restartedMain] INFO  o.h.c.Environment                                  - HHH000406: Using bytecode reflection optimizer
 					
-2024-08-20 14:45:08 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
+2024-08-21 09:12:33 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
 					
-2024-08-20 14:45:08 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-21 09:12:33 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer
 					
-2024-08-20 14:45:09 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
+2024-08-21 09:12:33 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
 					
-2024-08-20 14:45:09 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-08-21 09:12:34 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 					
-2024-08-20 14:45:09 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-21 09:12:34 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
 					
-2024-08-20 14:45:10 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory                   - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-21 09:12:35 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory                   - Hibernate is in classpath; If applicable, HQL parser will be used.
 					
-2024-08-20 14:45:10 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-21 09:12:36 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 					
-2024-08-20 14:45:11 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61f1b112, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c57601, org.springframework.security.web.context.SecurityContextHolderFilter@19dc0f6f, org.springframework.security.web.header.HeaderWriterFilter@1f42f073, org.springframework.web.filter.CorsFilter@303eb2f4, org.springframework.security.web.authentication.logout.LogoutFilter@280c2a89, com.company.config.security.JWTAuthorizationFilter@81e60eb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@45e48633, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f05ad08, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@796033db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59977a88, org.springframework.security.web.access.ExceptionTranslationFilter@57c074ad, org.springframework.security.web.access.intercept.AuthorizationFilter@48f0c4]
+2024-08-21 09:12:36 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@55fb7043, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a16c958, org.springframework.security.web.context.SecurityContextHolderFilter@4b9225e9, org.springframework.security.web.header.HeaderWriterFilter@3208b662, org.springframework.web.filter.CorsFilter@42c030dd, org.springframework.security.web.authentication.logout.LogoutFilter@6f1242b2, com.company.config.security.JWTAuthorizationFilter@6094b1b8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@326fb9b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@724effd8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6224052f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76f9517d, org.springframework.security.web.access.ExceptionTranslationFilter@7bf09b3b, org.springframework.security.web.access.intercept.AuthorizationFilter@d4d846d]
 					
-2024-08-20 14:45:11 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
+2024-08-21 09:12:37 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
 					
-2024-08-20 14:45:12 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:12:37 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:45:12 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path ''
+2024-08-21 09:12:37 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path ''
 					
-2024-08-20 14:45:12 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 6.384 seconds (process running for 7.469)
+2024-08-21 09:12:37 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 8.678 seconds (process running for 9.829)
 					
-2024-08-20 14:45:15 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-21 09:13:06 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
 					
-2024-08-20 14:45:15 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet'
+2024-08-21 09:13:06 [Thread-5] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:45:15 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 1 ms
+2024-08-21 09:13:06 [Thread-5] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat]
 					
-2024-08-20 14:45:15 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
-    select
-        u1_0.id,
-        u1_0.apartment_id,
-        u1_0.created_by,
-        u1_0.electricity_usage,
-        u1_0.payment_date,
-        u1_0.payment_status,
-        u1_0.total_amount,
-        u1_0.updated_by,
-        u1_0.water_usage 
-    from
-        utilities u1_0 
-    where
-        u1_0.apartment_id=?
-					
-2024-08-20 14:45:15 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
-    select
-        a1_0.id,
-        a1_0.apartment_number,
-        a1_0.area,
-        a1_0.created_by,
-        a1_0.num_rooms,
-        a1_0.updated_by 
-    from
-        `apartments` a1_0 
-    where
-        a1_0.id=?
-					
-2024-08-20 14:45:15 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at,
-        u1_0.username 
-    from
-        `users` u1_0 
-    where
-        u1_0.id=?
-					
-2024-08-20 14:49:22 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
-					
-2024-08-20 14:49:22 [Thread-5] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:49:22 [Thread-5] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat]
-					
-2024-08-20 14:49:22 [Thread-5] INFO  o.a.c.c.C.[.[.[/]                                  - Destroying Spring FrameworkServlet 'dispatcherServlet'
-					
-2024-08-20 14:49:22 [Thread-5] WARN  o.a.c.l.WebappClassLoaderBase                      - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+2024-08-21 09:13:06 [Thread-5] WARN  o.a.c.l.WebappClassLoaderBase                      - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base/jdk.internal.misc.Unsafe.park(Native Method)
  java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
  java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
@@ -128,126 +77,75 @@
  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
  java.base/java.lang.Thread.run(Thread.java:1583)
 					
-2024-08-20 14:49:22 [Thread-5] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:13:06 [Thread-5] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:49:22 [Thread-5] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:13:06 [Thread-5] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:49:22 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-21 09:13:06 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
 					
-2024-08-20 14:49:22 [Thread-5] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated...
+2024-08-21 09:13:06 [Thread-5] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated...
 					
-2024-08-20 14:49:22 [Thread-5] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed.
+2024-08-21 09:13:06 [Thread-5] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed.
 					
-2024-08-20 14:49:22 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3160 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager)
+2024-08-21 09:13:06 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 20864 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager)
 					
-2024-08-20 14:49:22 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev"
+2024-08-21 09:13:06 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev"
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-21 09:13:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 21 ms. Found 10 JPA repository interfaces.
+2024-08-21 09:13:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 22 ms. Found 10 JPA repository interfaces.
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http)
+2024-08-21 09:13:06 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http)
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:13:06 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat]
+2024-08-21 09:13:06 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat]
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2024-08-21 09:13:06 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13]
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext
+2024-08-21 09:13:06 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 287 ms
+2024-08-21 09:13:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 323 ms
 					
-2024-08-20 14:49:22 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Starting...
+2024-08-21 09:13:06 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Starting...
 					
-2024-08-20 14:49:22 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@478fd054
+2024-08-21 09:13:06 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7c94745a
 					
-2024-08-20 14:49:22 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Start completed.
+2024-08-21 09:13:06 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Start completed.
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-21 09:13:06 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default]
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
+2024-08-21 09:13:06 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-21 09:13:06 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
+2024-08-21 09:13:06 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-08-21 09:13:06 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 					
-2024-08-20 14:49:22 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-21 09:13:06 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
 					
-2024-08-20 14:49:23 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-21 09:13:07 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 					
-2024-08-20 14:49:23 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ad806b8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25d1d1d5, org.springframework.security.web.context.SecurityContextHolderFilter@735be388, org.springframework.security.web.header.HeaderWriterFilter@72f2e300, org.springframework.web.filter.CorsFilter@476ee15e, org.springframework.security.web.authentication.logout.LogoutFilter@706bb2b0, com.company.config.security.JWTAuthorizationFilter@2876ebe2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@76c4feb8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61caec97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@398f43d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@168ee635, org.springframework.security.web.access.ExceptionTranslationFilter@232f7649, org.springframework.security.web.access.intercept.AuthorizationFilter@5b973948]
+2024-08-21 09:13:07 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@616ace78, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47543e26, org.springframework.security.web.context.SecurityContextHolderFilter@418510cc, org.springframework.security.web.header.HeaderWriterFilter@51ef1ab0, org.springframework.web.filter.CorsFilter@79b9c509, org.springframework.security.web.authentication.logout.LogoutFilter@ec989f, com.company.config.security.JWTAuthorizationFilter@69ed23e5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5adc5758, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5bea3f51, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40954e2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41673bf1, org.springframework.security.web.access.ExceptionTranslationFilter@1dd0c689, org.springframework.security.web.access.intercept.AuthorizationFilter@3e901875]
 					
-2024-08-20 14:49:23 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
+2024-08-21 09:13:07 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
 					
-2024-08-20 14:49:23 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:13:07 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:49:23 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path ''
+2024-08-21 09:13:07 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path ''
 					
-2024-08-20 14:49:23 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 1.201 seconds (process running for 259.065)
+2024-08-21 09:13:07 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 1.298 seconds (process running for 40.026)
 					
-2024-08-20 14:49:23 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged
+2024-08-21 09:13:07 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged
 					
-2024-08-20 14:49:24 [http-nio-8080-exec-4] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
 					
-2024-08-20 14:49:24 [http-nio-8080-exec-4] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet'
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:49:24 [http-nio-8080-exec-4] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 0 ms
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat]
 					
-2024-08-20 14:49:24 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
-    select
-        u1_0.id,
-        u1_0.apartment_id,
-        u1_0.created_by,
-        u1_0.electricity_usage,
-        u1_0.payment_date,
-        u1_0.payment_status,
-        u1_0.total_amount,
-        u1_0.updated_by,
-        u1_0.water_usage 
-    from
-        utilities u1_0 
-    where
-        u1_0.apartment_id=?
-					
-2024-08-20 14:49:24 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
-    select
-        a1_0.id,
-        a1_0.apartment_number,
-        a1_0.area,
-        a1_0.created_by,
-        a1_0.num_rooms,
-        a1_0.updated_by 
-    from
-        `apartments` a1_0 
-    where
-        a1_0.id=?
-					
-2024-08-20 14:49:24 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at,
-        u1_0.username 
-    from
-        `users` u1_0 
-    where
-        u1_0.id=?
-					
-2024-08-20 14:49:35 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
-					
-2024-08-20 14:49:35 [Thread-7] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:49:35 [Thread-7] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat]
-					
-2024-08-20 14:49:35 [Thread-7] INFO  o.a.c.c.C.[.[.[/]                                  - Destroying Spring FrameworkServlet 'dispatcherServlet'
-					
-2024-08-20 14:49:35 [Thread-7] WARN  o.a.c.l.WebappClassLoaderBase                      - The web application [ROOT] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] WARN  o.a.c.l.WebappClassLoaderBase                      - The web application [ROOT] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base/jdk.internal.misc.Unsafe.park(Native Method)
  java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
  java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
@@ -258,222 +156,13 @@
  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
  java.base/java.lang.Thread.run(Thread.java:1583)
 					
-2024-08-20 14:49:35 [Thread-7] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:49:35 [Thread-7] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"]
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"]
 					
-2024-08-20 14:49:35 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
 					
-2024-08-20 14:49:35 [Thread-7] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown initiated...
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown initiated...
 					
-2024-08-20 14:49:35 [Thread-7] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown completed.
-					
-2024-08-20 14:49:35 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3160 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager)
-					
-2024-08-20 14:49:35 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev"
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 43 ms. Found 10 JPA repository interfaces.
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http)
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat]
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13]
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 674 ms
-					
-2024-08-20 14:49:36 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Starting...
-					
-2024-08-20 14:49:36 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@638b2358
-					
-2024-08-20 14:49:36 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Start completed.
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default]
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer
-					
-2024-08-20 14:49:36 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
-					
-2024-08-20 14:49:37 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-					
-2024-08-20 14:49:37 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
-					
-2024-08-20 14:49:37 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-					
-2024-08-20 14:49:38 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f10dfe5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7372fcfc, org.springframework.security.web.context.SecurityContextHolderFilter@4dac09a7, org.springframework.security.web.header.HeaderWriterFilter@6ac7f4b8, org.springframework.web.filter.CorsFilter@b652b9f, org.springframework.security.web.authentication.logout.LogoutFilter@1ac7ded0, com.company.config.security.JWTAuthorizationFilter@3e3e4ba, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@f0f1456, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c645d32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@623c526c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c3f2301, org.springframework.security.web.access.ExceptionTranslationFilter@972e694, org.springframework.security.web.access.intercept.AuthorizationFilter@2b1a6ebb]
-					
-2024-08-20 14:49:38 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
-					
-2024-08-20 14:49:38 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:49:38 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path ''
-					
-2024-08-20 14:49:38 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 2.849 seconds (process running for 274.005)
-					
-2024-08-20 14:49:38 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged
-					
-2024-08-20 14:49:47 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-					
-2024-08-20 14:49:47 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet'
-					
-2024-08-20 14:49:47 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 1 ms
-					
-2024-08-20 14:49:47 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
-    select
-        u1_0.id,
-        u1_0.apartment_id,
-        u1_0.created_by,
-        u1_0.electricity_usage,
-        u1_0.payment_date,
-        u1_0.payment_status,
-        u1_0.total_amount,
-        u1_0.updated_by,
-        u1_0.water_usage 
-    from
-        utilities u1_0 
-    where
-        u1_0.apartment_id=?
-					
-2024-08-20 14:49:47 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
-    select
-        a1_0.id,
-        a1_0.apartment_number,
-        a1_0.area,
-        a1_0.created_by,
-        a1_0.num_rooms,
-        a1_0.updated_by 
-    from
-        `apartments` a1_0 
-    where
-        a1_0.id=?
-					
-2024-08-20 14:49:48 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at,
-        u1_0.username 
-    from
-        `users` u1_0 
-    where
-        u1_0.id=?
-					
-2024-08-20 14:50:13 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
-					
-2024-08-20 14:50:13 [Thread-11] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:50:13 [Thread-11] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat]
-					
-2024-08-20 14:50:13 [Thread-11] INFO  o.a.c.c.C.[.[.[/]                                  - Destroying Spring FrameworkServlet 'dispatcherServlet'
-					
-2024-08-20 14:50:13 [Thread-11] WARN  o.a.c.l.WebappClassLoaderBase                      - The web application [ROOT] appears to have started a thread named [HikariPool-3 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base/jdk.internal.misc.Unsafe.park(Native Method)
- java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
- java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
- java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
- java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
- java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
- java.base/java.lang.Thread.run(Thread.java:1583)
-					
-2024-08-20 14:50:13 [Thread-11] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:50:13 [Thread-11] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:50:13 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
-					
-2024-08-20 14:50:13 [Thread-11] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Shutdown initiated...
-					
-2024-08-20 14:50:13 [Thread-11] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Shutdown completed.
-					
-2024-08-20 14:50:13 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Starting ApartmentManagementApplication using Java 21.0.3 with PID 3160 (C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager\target\classes started by Admin in C:\Users\Admin\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\ApartmentManager)
-					
-2024-08-20 14:50:13 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - The following 1 profile is active: "dev"
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 63 ms. Found 10 JPA repository interfaces.
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http)
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat]
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/10.1.13]
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 777 ms
-					
-2024-08-20 14:50:14 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Starting...
-					
-2024-08-20 14:50:14 [restartedMain] INFO  c.z.h.p.HikariPool                                 - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12b532d0
-					
-2024-08-20 14:50:14 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Start completed.
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default]
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo                - No LoadTimeWeaver setup: ignoring JPA class transformer
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator                  - HHH000021: Bytecode provider name : bytebuddy
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-					
-2024-08-20 14:50:14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
-					
-2024-08-20 14:50:15 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-					
-2024-08-20 14:50:16 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@423e226c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74eed981, org.springframework.security.web.context.SecurityContextHolderFilter@402a7706, org.springframework.security.web.header.HeaderWriterFilter@5b33c45c, org.springframework.web.filter.CorsFilter@32e3e5ec, org.springframework.security.web.authentication.logout.LogoutFilter@3f220bf9, com.company.config.security.JWTAuthorizationFilter@6cb23c10, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@709184db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@152226a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69f7f37a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e280837, org.springframework.security.web.access.ExceptionTranslationFilter@179d7693, org.springframework.security.web.access.intercept.AuthorizationFilter@5fc32119]
-					
-2024-08-20 14:50:16 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
-					
-2024-08-20 14:50:16 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:50:16 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path ''
-					
-2024-08-20 14:50:16 [restartedMain] INFO  c.c.ApartmentManagementApplication                 - Started ApartmentManagementApplication in 2.936 seconds (process running for 312.024)
-					
-2024-08-20 14:50:16 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Pausing ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  o.a.c.c.StandardService                            - Stopping service [Tomcat]
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] WARN  o.a.c.l.WebappClassLoaderBase                      - The web application [ROOT] appears to have started a thread named [HikariPool-4 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base/jdk.internal.misc.Unsafe.park(Native Method)
- java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
- java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
- java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
- java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
- java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
- java.base/java.lang.Thread.run(Thread.java:1583)
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Stopping ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  o.a.c.h.Http11NioProtocol                          - Destroying ProtocolHandler ["http-nio-8080"]
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Shutdown initiated...
-					
-2024-08-20 14:56:22 [RMI TCP Connection(15)-127.0.0.1] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Shutdown completed.
+2024-08-21 09:24:19 [RMI TCP Connection(16)-127.0.0.1] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown completed.
 					
