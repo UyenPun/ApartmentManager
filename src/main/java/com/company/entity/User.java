@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,6 +27,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "`users`")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -49,6 +55,7 @@ public class User implements Serializable {
 
 	@Column(name = "password", length = 255, nullable = false)
 	@NonNull
+	@JsonIgnore
 	private String password;
 
 	@Enumerated(EnumType.STRING)
@@ -63,32 +70,42 @@ public class User implements Serializable {
 	private LocalDateTime updatedAt;
 
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Apartment> createdApartments;
 
 	@OneToMany(mappedBy = "updatedBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Apartment> updatedApartments;
 
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Utility> createdUtilities;
 
 	@OneToMany(mappedBy = "updatedBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Utility> updatedUtilities;
 
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<AdditionalCharge> createdAdditionalCharges;
 
 	@OneToMany(mappedBy = "updatedBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<AdditionalCharge> updatedAdditionalCharges;
 
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<ApartmentHistory> createdApartmentHistories;
 
 	@OneToMany(mappedBy = "updatedBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<ApartmentHistory> updatedApartmentHistories;
 
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<MonthlyFee> createdMonthlyFees;
 
 	@OneToMany(mappedBy = "updatedBy", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<MonthlyFee> updatedMonthlyFees;
 }

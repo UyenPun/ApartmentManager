@@ -11,9 +11,9 @@ public class ApartmentDTO {
 	private Float area;
 	private Integer numRooms;
 	private String search;
-	private Date minCreatedDate;
-	private Date maxCreatedDate;
-	private Integer minYear;
+//	private Date minCreatedDate;
+//	private Date maxCreatedDate;
+//	private Integer minYear;
 
 	public ApartmentDTO(Integer id, String apartmentNumber, Float area, Integer numRooms) {
 		this.id = id;

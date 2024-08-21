@@ -1,9 +1,12 @@
-// Resident.java
 package com.company.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.CascadeType;
@@ -33,89 +36,94 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class Resident implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Integer id;
 
-    @Column(name = "name", length = 255, nullable = false)
-    @NonNull
-    private String name;
+	@Column(name = "name", length = 255, nullable = false)
+	@NonNull
+	private String name;
 
-    @Column(name = "email", nullable = false, length = 255)
-    @NonNull
-    private String email;
+	@Column(name = "email", nullable = false, length = 255)
+	@NonNull
+	private String email;
 
-    @Column(name = "phone", length = 15)
-    private String phone;
+	@Column(name = "phone", length = 15)
+	private String phone;
 
-    @Column(name = "id_card", nullable = false, length = 20)
-    @NonNull
-    private String idCard;
+	@Column(name = "id_card", nullable = false, length = 20)
+	@NonNull
+	private String idCard;
 
-    @Column(name = "birth_year")
-    private Integer birthYear;
+	@Column(name = "birth_year")
+	private Integer birthYear;
 
-    @Column(name = "gender", nullable = false)
-    @Convert(converter = GenderConverter.class)
-    @NonNull
-    private ResidentGender gender;
+	@Column(name = "gender", nullable = false)
+	@Convert(converter = GenderConverter.class)
+	@NonNull
+	private ResidentGender gender;
 
-    @ManyToOne
-    @JoinColumn(name = "apartment_id")
-    private Apartment apartment;
+	@ManyToOne
+	@JoinColumn(name = "apartment_id")
+	@JsonBackReference
+	private Apartment apartment;
 
-    @Column(name = "moved_in_date")
-    private LocalDate movedInDate;
+	@Column(name = "moved_in_date")
+	private LocalDate movedInDate;
 
-    @Column(name = "moved_out_date")
-    private LocalDate movedOutDate;
+	@Column(name = "moved_out_date")
+	private LocalDate movedOutDate;
 
-    @OneToMany(mappedBy = "resident", cascade = CascadeType.ALL)
-    private List<MonthlyFee> monthlyFees;
+	@OneToMany(mappedBy = "resident", cascade = CascadeType.ALL)
+	@JsonManagedReference
+	private List<MonthlyFee> monthlyFees;
 
-    public enum ResidentGender {
-        MALE("Male"), FEMALE("Female"), OTHER("Other");
+	public enum ResidentGender {
+		MALE("Male"), FEMALE("Female"), OTHER("Other");
 
-        private String value;
+		private String value;
 
-        private ResidentGender(String value) {
-            this.value = value;
-        }
+		private ResidentGender(String value) {
+			this.value = value;
+		}
 
-        public String getValue() {
-            return value;
-        }
+		public String getValue() {
+			return value;
+		}
 
-        public static ResidentGender toEnum(String sqlStatus) {
-            for (ResidentGender item : ResidentGender.values()) {
-                if (item.getValue().equals(sqlStatus)) {
-                    return item;
-                }
-            }
-            return null;
-        }
-    }
+		public static ResidentGender toEnum(String sqlStatus) {
+			if (sqlStatus == null) {
+				return null;
+			}
+			for (ResidentGender item : ResidentGender.values()) {
+				if (item.getValue().equalsIgnoreCase(sqlStatus)) {
+					return item;
+				}
+			}
+			return null;
+		}
+	}
 }
 
 @Converter(autoApply = true)
 class GenderConverter implements AttributeConverter<Resident.ResidentGender, String> {
 
-    @Override
-    public String convertToDatabaseColumn(Resident.ResidentGender name) {
-        if (name == null) {
-            return null;
-        }
-        return name.getValue();
-    }
+	@Override
+	public String convertToDatabaseColumn(Resident.ResidentGender name) {
+		if (name == null) {
+			return null;
+		}
+		return name.getValue();
+	}
 
-    @Override
-    public Resident.ResidentGender convertToEntityAttribute(String sqlName) {
-        if (sqlName == null) {
-            return null;
-        }
-        return Resident.ResidentGender.toEnum(sqlName);
-    }
+	@Override
+	public Resident.ResidentGender convertToEntityAttribute(String sqlName) {
+		if (sqlName == null) {
+			return null;
+		}
+		return Resident.ResidentGender.toEnum(sqlName);
+	}
 }

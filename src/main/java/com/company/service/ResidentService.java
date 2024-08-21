@@ -9,93 +9,150 @@ import com.company.entity.Resident;
 import com.company.form.ResidentForm;
 import com.company.repository.ApartmentRepository;
 import com.company.repository.ResidentRepository;
+import com.company.validation.ResidentServiceException;
 
 import java.time.LocalDate;
 
 @Service
 public class ResidentService implements IResidentService {
 
-    @Autowired
-    private ResidentRepository residentRepository;
+	@Autowired
+	private ResidentRepository residentRepository;
 
-    @Autowired
-    private ApartmentRepository apartmentRepository;
+	@Autowired
+	private ApartmentRepository apartmentRepository;
 
-    @Override
-    public ResidentDTO addResident(ResidentForm form) throws Exception {
-        // Kiểm tra email và chứng minh thư đã tồn tại
-        if (residentRepository.existsByEmail(form.getEmail())) {
-            throw new Exception("Email đã tồn tại");
-        }
-        if (residentRepository.existsByIdCard(form.getIdCard())) {
-            throw new Exception("Chứng minh thư đã tồn tại");
-        }
+	@Override
+	public ResidentDTO addResident(ResidentForm form) throws Exception {
+		// Kiểm tra email và chứng minh thư đã tồn tại
+		if (residentRepository.existsByEmail(form.getEmail())) {
+			throw new ResidentServiceException("Email đã tồn tại");
+		}
+		if (residentRepository.existsByIdCard(form.getIdCard())) {
+			throw new ResidentServiceException("Chứng minh thư đã tồn tại");
+		}
 
-        Resident resident = new Resident();
-        resident.setName(form.getName());
-        resident.setEmail(form.getEmail());
-        resident.setPhone(form.getPhoneNumber());
-        resident.setIdCard(form.getIdCard());
-        resident.setBirthYear(form.getBirthYear());
-        resident.setGender(Resident.ResidentGender.toEnum(form.getGender()));
-        resident.setMovedInDate(form.getMovedInDate());
+		Resident resident = new Resident();
+		resident.setName(form.getName());
+		resident.setEmail(form.getEmail());
+		resident.setPhone(form.getPhoneNumber());
+		resident.setIdCard(form.getIdCard());
+		resident.setBirthYear(form.getBirthYear());
 
-        // Tìm và liên kết với căn hộ
-        Apartment apartment = apartmentRepository.findById(form.getApartmentId())
-                .orElseThrow(() -> new Exception("Không tìm thấy căn hộ"));
-        resident.setApartment(apartment);
+		// Kiểm tra và gán giá trị cho gender
+		Resident.ResidentGender gender = Resident.ResidentGender.toEnum(form.getGender());
+		if (gender == null) {
+			throw new ResidentServiceException("Giới tính không hợp lệ");
+		}
+		resident.setGender(gender);
 
-        // Lưu cư dân vào cơ sở dữ liệu
-        residentRepository.save(resident);
+		// Gán giá trị cho movedInDate, mặc định là ngày hiện tại nếu không có giá trị
+		if (form.getMovedInDate() == null) {
+			resident.setMovedInDate(LocalDate.now());
+		} else {
+			resident.setMovedInDate(form.getMovedInDate());
+		}
 
-        return convertToDTO(resident);
-    }
+		// Tìm và liên kết với căn hộ
+		Apartment apartment = apartmentRepository.findById(form.getApartmentId())
+				.orElseThrow(() -> new ResidentServiceException("Không tìm thấy căn hộ"));
+		resident.setApartment(apartment);
 
-    @Override
-    public ResidentDTO moveOutResident(Integer residentId, LocalDate movedOutDate) throws Exception {
-        Resident resident = residentRepository.findById(residentId)
-                .orElseThrow(() -> new Exception("Không tìm thấy cư dân"));
+		// Lưu cư dân vào cơ sở dữ liệu
+		residentRepository.save(resident);
 
-        // Kiểm tra nếu cư dân đã ở một căn hộ khác
-        if (resident.getMovedOutDate() != null) {
-            throw new Exception("Cư dân đã dọn ra trước đó");
-        }
+		return convertToDTO(resident);
+	}
 
-        resident.setMovedOutDate(movedOutDate);
-        residentRepository.save(resident);
+	public ResidentDTO updateResidentInfo(Integer residentId, ResidentForm form) throws Exception {
+		// Tìm cư dân theo ID
+		Resident resident = residentRepository.findById(residentId)
+				.orElseThrow(() -> new ResidentServiceException("Không tìm thấy cư dân"));
 
-        return convertToDTO(resident);
-    }
+		// Cập nhật số điện thoại, email, và tên nếu có trong form
+		if (form.getPhoneNumber() != null) {
+			resident.setPhone(form.getPhoneNumber());
+		}
+		if (form.getEmail() != null) {
+			resident.setEmail(form.getEmail());
+		}
+		if (form.getName() != null) {
+			resident.setName(form.getName());
+		}
 
-    @Override
-    public ResidentDTO moveInResident(Integer residentId, Integer apartmentId, ResidentForm form) throws Exception {
-        Resident resident = residentRepository.findById(residentId)
-                .orElseThrow(() -> new Exception("Không tìm thấy cư dân"));
+		// Nếu thông tin cho việc "bớt người ở" được cung cấp (movedOutDate)
+		if (form.getMovedOutDate() != null) {
+			resident.setMovedOutDate(form.getMovedOutDate());
 
-        // Cập nhật thông tin căn hộ mới
-        if (apartmentId != null) {
-            Apartment apartment = apartmentRepository.findById(apartmentId)
-                    .orElseThrow(() -> new Exception("Không tìm thấy căn hộ"));
-            resident.setApartment(apartment);
-            resident.setMovedInDate(LocalDate.now());
-        }
+			// Tìm và cập nhật số lượng cư dân trong căn hộ
+			Apartment apartment = resident.getApartment();
 
-        // Cập nhật các thông tin khác nếu có
-        if (form.getPhoneNumber() != null) {
-            resident.setPhone(form.getPhoneNumber());
-        }
-        if (form.getEmail() != null) {
-            resident.setEmail(form.getEmail());
-        }
-        // Các trường khác có thể thêm vào tương tự
+			// Tính số lượng cư dân hiện tại trong căn hộ
+			long currentOccupantsCount = residentRepository.countByApartmentIdAndMovedOutDateIsNull(apartment.getId());
 
-        residentRepository.save(resident);
-        return convertToDTO(resident);
-    }
+			// Nếu cư dân chuyển đi, không cần giảm số lượng, vì chúng ta tính toán trực
+			// tiếp
+			if (resident.getMovedOutDate() == null) {
+				resident.setMovedOutDate(form.getMovedOutDate());
+			}
 
-    private ResidentDTO convertToDTO(Resident resident) {
-        return new ResidentDTO(resident.getId(), resident.getName(), resident.getEmail(), resident.getPhone(),
-                resident.getIdCard(), resident.getBirthYear(), resident.getGender(), resident.getApartment().getId(),
-                resident.getMovedInDate(), resident.getMovedOutDate());
-    }
+			// Lưu cư dân sau khi cập nhật thông tin
+			residentRepository.save(resident);
+		}
+
+		return convertToDTO(resident);
+	}
+
+	@Override
+	public void deleteResidentById(Integer residentId) {
+		residentRepository.deleteById(residentId);
+	}
+
+	@Override
+	public ResidentDTO moveOutResident(Integer residentId, LocalDate movedOutDate) throws Exception {
+		Resident resident = residentRepository.findById(residentId)
+				.orElseThrow(() -> new ResidentServiceException("Không tìm thấy cư dân"));
+
+		// Kiểm tra nếu cư dân đã ở một căn hộ khác
+		if (resident.getMovedOutDate() != null) {
+			throw new ResidentServiceException("Cư dân đã dọn ra trước đó");
+		}
+
+		resident.setMovedOutDate(movedOutDate);
+		residentRepository.save(resident);
+
+		return convertToDTO(resident);
+	}
+
+	@Override
+	public ResidentDTO moveInResident(Integer residentId, Integer apartmentId, ResidentForm form) throws Exception {
+		Resident resident = residentRepository.findById(residentId)
+				.orElseThrow(() -> new ResidentServiceException("Không tìm thấy cư dân"));
+
+		// Cập nhật thông tin căn hộ mới
+		if (apartmentId != null) {
+			Apartment apartment = apartmentRepository.findById(apartmentId)
+					.orElseThrow(() -> new ResidentServiceException("Không tìm thấy căn hộ"));
+			resident.setApartment(apartment);
+			resident.setMovedInDate(LocalDate.now());
+		}
+
+		// Cập nhật các thông tin khác nếu có
+		if (form.getPhoneNumber() != null) {
+			resident.setPhone(form.getPhoneNumber());
+		}
+		if (form.getEmail() != null) {
+			resident.setEmail(form.getEmail());
+		}
+		// Các trường khác có thể thêm vào tương tự
+
+		residentRepository.save(resident);
+		return convertToDTO(resident);
+	}
+
+	private ResidentDTO convertToDTO(Resident resident) {
+		return new ResidentDTO(resident.getId(), resident.getName(), resident.getEmail(), resident.getPhone(),
+				resident.getIdCard(), resident.getBirthYear(), resident.getGender(), resident.getApartment().getId(),
+				resident.getMovedInDate(), resident.getMovedOutDate());
+	}
 }

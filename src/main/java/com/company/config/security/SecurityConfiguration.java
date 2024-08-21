@@ -26,43 +26,51 @@ import com.company.config.exception.AuthExceptionHandler;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
-	@Autowired
-	private AuthExceptionHandler authExceptionHandler;
+    @Autowired
+    private AuthExceptionHandler authExceptionHandler;
 
-	@Autowired
-	private JWTAuthorizationFilter jwtAuthorizationFilter;
+    @Autowired
+    private JWTAuthorizationFilter jwtAuthorizationFilter;
 
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
-		return authConfig.getAuthenticationManager();
-	}
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
+    }
 
-	@SuppressWarnings("removal")
-	@Bean
-	public SecurityFilterChain configureSecurity(HttpSecurity http) throws Exception {
-		http.cors(withDefaults()).csrf((csrf) -> csrf.disable())
-				.authorizeHttpRequests((requests) -> requests.requestMatchers("/api/v1/auth/**").anonymous() // cho phép các API trong auth đều có thể truy cập mà không cần login
-						.requestMatchers("/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER").anyRequest()
-						.authenticated())
-				.httpBasic(withDefaults())
-				.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class).exceptionHandling()
-				.authenticationEntryPoint(authExceptionHandler).accessDeniedHandler(authExceptionHandler);
+    @SuppressWarnings("removal")
+    @Bean
+    public SecurityFilterChain configureSecurity(HttpSecurity http) throws Exception {
+        http.cors(withDefaults())
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(requests -> requests
+                .requestMatchers("/api/v1/auth/**").anonymous() // Cho phép các API trong auth được truy cập mà không cần đăng nhập
+                .requestMatchers(HttpMethod.GET, "/apartments/count").permitAll() // Cho phép truy cập công khai vào endpoint này
+                .requestMatchers("/api/v1/apartments/**").permitAll() // Cho phép truy cập không cần đăng nhập cho API apartments
+                .requestMatchers("/api/v1/residents/**").permitAll() // Cho phép truy cập không cần xác thực cho API residents
+                .requestMatchers("/utilities/**").permitAll() // Allow public access to /utilities
+                .requestMatchers("/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER")
+                .anyRequest().authenticated())
+            .httpBasic(withDefaults())
+            .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
+            .exceptionHandling()
+            .authenticationEntryPoint(authExceptionHandler)
+            .accessDeniedHandler(authExceptionHandler);
 
-		return http.build();
-	}
+        return http.build();
+    }
 
-	@Bean
-	public CorsConfigurationSource corsConfigurationSource() {
-		final CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-		configuration.applyPermitDefaultValues();
-		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", configuration);
-		return source;
-	}
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        final CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+        configuration.applyPermitDefaultValues();
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }

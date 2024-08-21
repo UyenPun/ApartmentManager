@@ -23,10 +23,10 @@ public class ApartmentSpecification {
 		if (filterForm == null)
 			return where;
 
-		if (!StringUtils.isEmpty(filterForm.getApartmentNumber())) {
-			String apartmentNumber = filterForm.getApartmentNumber().trim();
-			CustomSpecification apartmentNumberSpec = new CustomSpecification("apartmentNumber", apartmentNumber);
-			where = Specification.where(apartmentNumberSpec);
+		if (!StringUtils.isEmpty(filterForm.getSearch())) {
+			String search = filterForm.getSearch().trim();
+			CustomSpecification searchSpec = new CustomSpecification("search", search);
+			where = Specification.where(searchSpec);
 		}
 
 		if (filterForm.getMinArea() != null) {
@@ -62,16 +62,6 @@ public class ApartmentSpecification {
 				where = maxRoomsSpec;
 			} else {
 				where = where.and(maxRoomsSpec);
-			}
-		}
-
-		if (!StringUtils.isEmpty(filterForm.getSearch())) {
-			String search = filterForm.getSearch().trim();
-			CustomSpecification searchSpec = new CustomSpecification("search", search);
-			if (where == null) {
-				where = searchSpec;
-			} else {
-				where = where.and(searchSpec);
 			}
 		}
 
@@ -119,25 +109,36 @@ public class ApartmentSpecification {
 		@Override
 		public Predicate toPredicate(Root<Apartment> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
 			switch (field) {
-			case "apartmentNumber":
-				return criteriaBuilder.like(root.get("apartmentNumber"), "%" + value.toString() + "%");
+			case "search":
+				// Sử dụng join để tìm kiếm theo tên cư dân hoặc số căn hộ
+				Predicate apartmentNumberPredicate = criteriaBuilder.like(root.get("apartmentNumber"),
+						"%" + value.toString() + "%");
+				Predicate residentNamePredicate = criteriaBuilder.like(root.join("residents").get("name"),
+						"%" + value.toString() + "%");
+				return criteriaBuilder.or(apartmentNumberPredicate, residentNamePredicate);
+
 			case "minArea":
 				return criteriaBuilder.greaterThanOrEqualTo(root.get("area"), (Float) value);
+
 			case "maxArea":
 				return criteriaBuilder.lessThanOrEqualTo(root.get("area"), (Float) value);
+
 			case "minRooms":
 				return criteriaBuilder.greaterThanOrEqualTo(root.get("numRooms"), (Integer) value);
+
 			case "maxRooms":
 				return criteriaBuilder.lessThanOrEqualTo(root.get("numRooms"), (Integer) value);
-			case "search":
-				return criteriaBuilder.like(root.get("apartmentNumber"), "%" + value.toString() + "%");
+
 			case "minCreatedDate":
 				return criteriaBuilder.greaterThanOrEqualTo(root.get("createdDate").as(Date.class), (Date) value);
+
 			case "maxCreatedDate":
 				return criteriaBuilder.lessThanOrEqualTo(root.get("createdDate").as(Date.class), (Date) value);
+
 			case "minYear":
 				return criteriaBuilder.greaterThanOrEqualTo(
 						criteriaBuilder.function("YEAR", Integer.class, root.get("createdDate")), (Integer) value);
+
 			default:
 				return null;
 			}

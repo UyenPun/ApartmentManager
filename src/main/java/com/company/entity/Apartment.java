@@ -3,6 +3,7 @@ package com.company.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
@@ -22,6 +23,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+
 // Cau 1, 2
 @Entity
 @Table(name = "`apartments`")
@@ -50,23 +52,28 @@ public class Apartment implements Serializable {
 	private Integer numRooms;
 
 	@OneToMany(mappedBy = "apartment", cascade = CascadeType.ALL)
+	@JsonManagedReference 
 	private List<Resident> residents;
 
 	@OneToMany(mappedBy = "apartment", cascade = CascadeType.ALL)
-	@JsonManagedReference
+	@JsonIgnore
 	private List<Utility> utilities;
 
 	@OneToMany(mappedBy = "apartment", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<AdditionalCharge> additionalCharges;
 
 	@OneToMany(mappedBy = "apartment", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<MonthlyFee> monthlyFees;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "created_by")
-    private User createdBy; // Liên kết tới bảng User
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "updated_by")
-    private User updatedBy; // Liên kết tới bảng User
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "created_by")
+	@JsonIgnore
+	private User createdBy; // Liên kết tới bảng User
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "updated_by")
+	@JsonIgnore
+	private User updatedBy; // Liên kết tới bảng User
 }
