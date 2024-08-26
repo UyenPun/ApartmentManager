@@ -6,6 +6,9 @@ import com.company.entity.Utility.PaymentStatus;
 import com.company.form.UtilityForm;
 import com.company.repository.ApartmentRepository;
 import com.company.repository.UtilityRepository;
+
+import jakarta.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -110,7 +113,14 @@ public class UtilityService {
 		BigDecimal totalCost = waterCost.add(electricityCost);
 
 		// Gọi phương thức để gửi email đến địa chỉ cụ thể
-		emailService.sendWaterAndElectricityCostEmailToSpecificEmail(recipientEmail, apartmentNumber, waterCost,
-				electricityCost, totalCost);
+		try {
+			emailService.sendWaterAndElectricityCostEmailToSpecificEmail(recipientEmail, apartmentNumber, waterCost,
+					electricityCost, totalCost);
+		} catch (MessagingException e) {
+			// Xử lý ngoại lệ, ví dụ: log lỗi hoặc ném một ngoại lệ runtime
+			e.printStackTrace();
+			throw new RuntimeException("Failed to send email", e);
+		}
 	}
+
 }

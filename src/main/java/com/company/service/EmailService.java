@@ -5,13 +5,22 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.context.Context;
+import org.thymeleaf.spring6.SpringTemplateEngine;
+
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 
 @Service
 public class EmailService {
 
 	@Autowired
 	private JavaMailSender mailSender;
+
+	@Autowired
+	private SpringTemplateEngine templateEngine;
 
 	// Phương thức gửi email phí sinh hoạt hàng tháng
 	public void sendMonthlyFeeEmail(String to, String representativeName, String apartmentNumber, Double monthlyFee) {
@@ -45,17 +54,40 @@ public class EmailService {
 	}
 
 	// Phương thức mới để gửi email đến địa chỉ cụ thể
-	public void sendWaterAndElectricityCostEmailToSpecificEmail(String recipientEmail, String apartmentNumber,
-			BigDecimal waterCost, BigDecimal electricityCost, BigDecimal totalCost) {
-		String subject = "Utility Cost Information for Apartment " + apartmentNumber;
-		String text = "Dear Resident,\n\n" + "Here is the utility cost breakdown for your apartment:\n"
-				+ "Apartment Number: " + apartmentNumber + "\n" + "Water Cost: $" + waterCost + "\n"
-				+ "Electricity Cost: $" + electricityCost + "\n" + "Total Cost: $" + totalCost + "\n\n" + "Thank you.";
+//	public void sendWaterAndElectricityCostEmailToSpecificEmail(String recipientEmail, String apartmentNumber,
+//			BigDecimal waterCost, BigDecimal electricityCost, BigDecimal totalCost) {
+//		String subject = "Utility Cost Information for Apartment " + apartmentNumber;
+//		String text = "Dear Resident,\n\n" + "Here is the utility cost breakdown for your apartment:\n"
+//				+ "Apartment Number: " + apartmentNumber + "\n" + "Water Cost: $" + waterCost + "\n"
+//				+ "Electricity Cost: $" + electricityCost + "\n" + "Total Cost: $" + totalCost + "\n\n" + "Thank you.";
+//
+//		SimpleMailMessage message = new SimpleMailMessage();
+//		message.setTo(recipientEmail); // Địa chỉ email người nhận từ request
+//		message.setSubject(subject);
+//		message.setText(text);
+//
+//		mailSender.send(message);
+//	}
 
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setTo(recipientEmail); // Địa chỉ email người nhận từ request
-		message.setSubject(subject);
-		message.setText(text);
+	public void sendWaterAndElectricityCostEmailToSpecificEmail(String recipientEmail, String apartmentNumber,
+			BigDecimal waterCost, BigDecimal electricityCost, BigDecimal totalCost) throws MessagingException {
+		// Prepare the email context with variables
+		Context context = new Context();
+		context.setVariable("apartmentNumber", apartmentNumber);
+		context.setVariable("waterCost", waterCost);
+		context.setVariable("electricityCost", electricityCost);
+		context.setVariable("totalCost", totalCost);
+		context.setVariable("representativeName", "Resident");
+
+		// Generate the email content using Thymeleaf
+		String emailContent = templateEngine.process("waterCostEmail", context);
+
+		// Create a MimeMessage (supports HTML content)
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message, true);
+		helper.setTo(recipientEmail);
+		helper.setSubject("Utility Cost Information for Apartment " + apartmentNumber);
+		helper.setText(emailContent, true); // Set the content as HTML
 
 		mailSender.send(message);
 	}

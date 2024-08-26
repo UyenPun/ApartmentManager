@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Utility Cost Information</title>
+    <style>
+        .cost-value {
+            color: #d9534f; /* Màu đỏ đậm */
+            font-weight: bold; /* In đậm */
+        }
+        .heart-icon {
+            color: #e25555; /* Màu đỏ hồng cho icon trái tim */
+        }
+        .bold-text {
+            font-weight: bold; /* In đậm cho đoạn văn bản */
+        }
+    </style>
+</head>
+<body>
+    <p><strong>Dear <span th:text="${representativeName}"></span>,</strong></p>
+    <p>Here is the utility cost breakdown for your apartment:</p>
+    <p>Apartment Number: <span th:text="${apartmentNumber}"></span></p>
+    <p>Water Cost: $<span class="cost-value" th:text="${waterCost}"></span></p>
+    <p>Electricity Cost: $<span class="cost-value" th:text="${electricityCost}"></span></p>
+    <p>Total Cost: $<span class="cost-value" th:text="${totalCost}"></span></p>
+    <p>Thank you. <span class="heart-icon">❤️</span></p>
+</body>
+</html>
