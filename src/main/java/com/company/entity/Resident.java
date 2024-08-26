@@ -14,6 +14,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Converter;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -47,22 +49,22 @@ public class Resident implements Serializable {
 	@NonNull
 	private String name;
 
-	@Column(name = "email", nullable = false, length = 255)
+	@Column(name = "email", nullable = false, length = 255, unique = true)
 	@NonNull
 	private String email;
 
 	@Column(name = "phone", length = 15)
 	private String phone;
 
-	@Column(name = "id_card", nullable = false, length = 20)
+	@Column(name = "id_card", nullable = false, length = 20, unique = true)
 	@NonNull
 	private String idCard;
 
 	@Column(name = "birth_year")
 	private Integer birthYear;
 
-	@Column(name = "gender", nullable = false)
 	@Convert(converter = GenderConverter.class)
+	@Column(name = "gender", nullable = false)
 	@NonNull
 	private ResidentGender gender;
 
@@ -77,6 +79,26 @@ public class Resident implements Serializable {
 	@Column(name = "moved_out_date")
 	private LocalDate movedOutDate;
 
+	@Enumerated(EnumType.STRING)
+	@Column(name = "status", nullable = false)
+	private ResidentStatus status = ResidentStatus.ACTIVE;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@ManyToOne
+	@JoinColumn(name = "created_by")
+	private User createdBy;
+
+	@ManyToOne
+	@JoinColumn(name = "updated_by")
+	private User updatedBy;
+
+	@ManyToOne
+	@JoinColumn(name = "deleted_by")
+	private User deletedBy;
+
 	@OneToMany(mappedBy = "resident", cascade = CascadeType.ALL)
 	@JsonManagedReference
 	private List<MonthlyFee> monthlyFees;
@@ -86,7 +108,7 @@ public class Resident implements Serializable {
 
 		private String value;
 
-		private ResidentGender(String value) {
+		ResidentGender(String value) {
 			this.value = value;
 		}
 
@@ -106,24 +128,22 @@ public class Resident implements Serializable {
 			return null;
 		}
 	}
+
+	public enum ResidentStatus {
+		ACTIVE, INACTIVE;
+	}
 }
 
 @Converter(autoApply = true)
 class GenderConverter implements AttributeConverter<Resident.ResidentGender, String> {
 
 	@Override
-	public String convertToDatabaseColumn(Resident.ResidentGender name) {
-		if (name == null) {
-			return null;
-		}
-		return name.getValue();
+	public String convertToDatabaseColumn(Resident.ResidentGender gender) {
+		return (gender == null) ? null : gender.getValue();
 	}
 
 	@Override
-	public Resident.ResidentGender convertToEntityAttribute(String sqlName) {
-		if (sqlName == null) {
-			return null;
-		}
-		return Resident.ResidentGender.toEnum(sqlName);
+	public Resident.ResidentGender convertToEntityAttribute(String value) {
+		return (value == null) ? null : Resident.ResidentGender.toEnum(value);
 	}
 }

@@ -54,4 +54,17 @@ public class ResidentController {
 //		residentService.deleteResidentById(residentId);
 //		return ResponseEntity.noContent().build(); // Trả về HTTP 204 No Content nếu thành công
 //	}
+
+	// Đánh dấu cư dân đã dọn ra
+	@PutMapping("/{residentId}/soft-delete")
+	public ResidentDTO moveOutResidentLogic(@PathVariable Integer residentId,
+			@RequestBody Map<String, String> requestBody) throws Exception {
+		String movedOutDateStr = requestBody.get("movedOutDate");
+		if (movedOutDateStr == null) {
+			throw new Exception("Moved out date is required");
+		}
+		LocalDate movedOutDate = LocalDate.parse(movedOutDateStr);
+		return residentService.moveOutResident(residentId, movedOutDate);
+	}
+
 }

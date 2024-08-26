@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.company.dto.ResidentDTO;
 import com.company.entity.Apartment;
 import com.company.entity.Resident;
+import com.company.entity.Resident.ResidentStatus;
 import com.company.exception.ResourceNotFoundException;
 import com.company.form.ResidentForm;
 import com.company.repository.ApartmentRepository;
@@ -115,12 +116,16 @@ public class ResidentService implements IResidentService {
 		Resident resident = residentRepository.findById(residentId)
 				.orElseThrow(() -> new ResidentServiceException("Không tìm thấy cư dân"));
 
-		// Kiểm tra nếu cư dân đã ở một căn hộ khác
+		// Kiểm tra nếu cư dân đã có ngày chuyển đi
 		if (resident.getMovedOutDate() != null) {
 			throw new ResidentServiceException("Cư dân đã dọn ra trước đó");
 		}
 
+		// Cập nhật ngày chuyển đi và trạng thái
 		resident.setMovedOutDate(movedOutDate);
+		resident.setStatus(ResidentStatus.INACTIVE); // Cập nhật trạng thái thành INACTIVE
+
+		// Lưu cư dân sau khi cập nhật thông tin
 		residentRepository.save(resident);
 
 		return convertToDTO(resident);
@@ -163,7 +168,6 @@ public class ResidentService implements IResidentService {
 		Resident resident = residentRepository.findById(residentId)
 				.orElseThrow(() -> new ResourceNotFoundException("Resident not found"));
 
-		// Đánh dấu cư dân là INACTIVE và cập nhật moved_out_date
 		resident.setStatus(ResidentStatus.INACTIVE);
 		resident.setMovedOutDate(LocalDate.now());
 

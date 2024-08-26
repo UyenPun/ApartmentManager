@@ -48,6 +48,7 @@ public class SecurityConfiguration {
                 .requestMatchers("/api/v1/apartments/**").permitAll() // Cho phép truy cập không cần đăng nhập cho API apartments
                 .requestMatchers("/api/v1/residents/**").permitAll() // Cho phép truy cập không cần xác thực cho API residents
                 .requestMatchers("/utilities/**").permitAll() // Allow public access to /utilities
+                .requestMatchers("/mail/send-water-cost/**").permitAll() // Cho phép truy cập không cần xác thực cho endpoint này
                 .requestMatchers("/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER")
                 .anyRequest().authenticated())
             .httpBasic(withDefaults())
