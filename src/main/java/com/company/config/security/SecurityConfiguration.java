@@ -50,6 +50,8 @@ public class SecurityConfiguration {
                 .requestMatchers("/utilities/**").permitAll() // Allow public access to /utilities
                 .requestMatchers("/mail/send-water-cost/**").permitAll() // Cho phép truy cập không cần xác thực cho endpoint này
                 .requestMatchers("/api/v1/users/**").hasAnyAuthority("ADMIN", "MANAGER")
+                // Allow public access to Swagger UI
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .anyRequest().authenticated())
             .httpBasic(withDefaults())
             .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
