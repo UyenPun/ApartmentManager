@@ -1,8 +1,8 @@
 package com.company.service;
 
-import com.company.dto.LoginInfoDto;
+import com.company.presentation.rest.auth.response.LoginInfoDto;
 
 public interface IAuthService {
 
-	LoginInfoDto login(String username);
+    LoginInfoDto login(String username);
 }

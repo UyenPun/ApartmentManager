@@ -9,20 +9,20 @@ import org.thymeleaf.templatemode.TemplateMode;
 @Configuration
 public class ThymeleafConfig {
 
-	@Bean
-	public SpringTemplateEngine templateEngine() {
-		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-		templateEngine.setTemplateResolver(htmlTemplateResolver());
-		return templateEngine;
-	}
+    @Bean
+    public SpringTemplateEngine templateEngine() {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(htmlTemplateResolver());
+        return templateEngine;
+    }
 
-	@Bean
-	public SpringResourceTemplateResolver htmlTemplateResolver() {
-		SpringResourceTemplateResolver emailTemplateResolver = new SpringResourceTemplateResolver();
-		emailTemplateResolver.setPrefix("classpath:/templates/");
-		emailTemplateResolver.setSuffix(".html");
-		emailTemplateResolver.setTemplateMode(TemplateMode.HTML);
-		emailTemplateResolver.setCharacterEncoding("UTF-8");
-		return emailTemplateResolver;
-	}
+    @Bean
+    public SpringResourceTemplateResolver htmlTemplateResolver() {
+        SpringResourceTemplateResolver emailTemplateResolver = new SpringResourceTemplateResolver();
+        emailTemplateResolver.setPrefix("classpath:/templates/");
+        emailTemplateResolver.setSuffix(".html");
+        emailTemplateResolver.setTemplateMode(TemplateMode.HTML);
+        emailTemplateResolver.setCharacterEncoding("UTF-8");
+        return emailTemplateResolver;
+    }
 }

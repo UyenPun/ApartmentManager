@@ -1,7 +1,13 @@
 package com.company.service;
 
-import java.util.List;
-
+import com.company.adaptor.database.form.CreatingUserForm;
+import com.company.adaptor.database.form.UserFilterForm;
+import com.company.adaptor.database.repository.IUserRepository;
+import com.company.adaptor.database.specification.UserSpecification;
+import com.company.domain.entity.User;
+import com.company.presentation.rest.user.response.UserDTO;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -11,15 +17,8 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 
-import com.company.dto.UserDTO;
-import com.company.entity.User;
-import com.company.form.CreatingUserForm;
-import com.company.form.UserFilterForm;
-import com.company.repository.IUserRepository;
-import com.company.specification.UserSpecification;
+import java.util.List;
 
 @Service
 public class UserService implements IUserService {
@@ -55,7 +54,8 @@ public class UserService implements IUserService {
         Specification<User> where = UserSpecification.buildWhere(filterForm);
         Page<User> entityPage = repository.findAll(where, pageable);
 
-        List<UserDTO> dtos = modelMapper.map(entityPage.getContent(), new TypeToken<List<UserDTO>>() {}.getType());
+        List<UserDTO> dtos = modelMapper.map(entityPage.getContent(), new TypeToken<List<UserDTO>>() {
+        }.getType());
 
         return new PageImpl<>(dtos, pageable, entityPage.getTotalElements());
     }
