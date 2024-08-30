@@ -1,5 +1,6 @@
 package com.company.config;
 
+import com.company.presentation.rest.CustomLoggingFilter;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,6 +37,10 @@ public class ComponentConfiguration {
         };
     }
 
+    @Bean
+    public CustomLoggingFilter loggingFilter() {
+        return new CustomLoggingFilter();
+    }
 
     /**
      * UI: http://localhost:8080/swagger-ui/index.html
