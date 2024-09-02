@@ -2,31 +2,29 @@ package com.company.presentation.rest.apartment.response;
 //Cau 2
 
 import com.company.domain.entity.Apartment;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.domain.Page;
 
 @Data
+@Builder(access = AccessLevel.PRIVATE)
 public class ApartmentResponse {
     private Integer id;
     private String apartmentNumber;
     private Float area;
     private Integer numRooms;
-    private String search;
-
-    public ApartmentResponse(Integer id, String apartmentNumber, Float area, Integer numRooms) {
-        this.id = id;
-        this.apartmentNumber = apartmentNumber;
-        this.area = area;
-        this.numRooms = numRooms;
-    }
 
     public static Page<ApartmentResponse> create(Page<Apartment> apartmentPage) {
-        return apartmentPage.map(ApartmentResponse::convertToDTO);
+        return apartmentPage.map(ApartmentResponse::create);
     }
 
-
-    private static ApartmentResponse convertToDTO(Apartment apartment) {
-        return new ApartmentResponse(apartment.getId(), apartment.getApartmentNumber(), apartment.getArea(),
-                apartment.getNumRooms());
+    private static ApartmentResponse create(Apartment apartment) {
+        return ApartmentResponse.builder()
+                .id(apartment.getId())
+                .apartmentNumber(apartment.getApartmentNumber())
+                .area(apartment.getArea())
+                .numRooms(apartment.getNumRooms())
+                .build();
     }
 }
