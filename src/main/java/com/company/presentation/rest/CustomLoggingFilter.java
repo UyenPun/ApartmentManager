@@ -16,6 +16,7 @@ import org.springframework.web.util.WebUtils;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+// Log các request và response
 @Slf4j
 public class CustomLoggingFilter extends AbstractRequestLoggingFilter {
 

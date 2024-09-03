@@ -135,10 +135,10 @@
 			<artifactId>jakarta.mail</artifactId>
 			<version>2.0.1</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
+		</dependency>-->
 
 		<!-- Thymeleaf -->
 		<dependency>
@@ -153,13 +153,12 @@
 			<version>5.10.2</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 			<version>5.10.2</version>
 			<scope>test</scope>
-		</dependency>
-
+		</dependency> -->
 
 		<!-- Mockito dependency -->
 		<dependency>

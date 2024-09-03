@@ -1,7 +1,11 @@
 package com.company.adaptor.database.form;
 
 import jakarta.validation.constraints.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 public class CreatingUserForm {
 
     @NotBlank(message = "Username must not be null or empty")
